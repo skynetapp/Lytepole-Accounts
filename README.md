@@ -78,6 +78,20 @@ Function **viewAccount()** will be called first when we click on the settings li
 - Function **showAccount** will send the data to view and display the output tpl page.
 - In action, function **showAccountListView** will call the AccountView.php to show the account details.
 
+#### Step 11:
+
+Next action in index.php is to call function **editAccount** from index to controller which will edit the account data of login user.
+
+- Function **getUserID** will get the user id by calling wsdl from controller to action.
+- In action ws client connection will be set and function **getUserID** will be called from AccountWS.php.
+- In AccountWS.php, the parameters will be passed to ws call **get_user_id** and return the result to action page.
+
+- Function **createAccountListInputVO** will take the input data and prepares the input value object for WSDL from controller to action.
+- This function gets the values from input array and sets the values for list value to pass for WSDL call. It prepares the query and required input to create account.
+
+- Function **editAccountDetails** will edit the account details from controller to action.
+- In action, ws client connection will be set and function **editAccountDetails** in AccountWS.php will create parameters for wsdl using object.
+- To ws client call **set_entry**, parameters will be passed and the result will be returned. 
 
 
 
