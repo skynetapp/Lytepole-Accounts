@@ -29,7 +29,7 @@ Function **viewAccount()** will be called first from index.php to controller pag
 - Function **createAccountListDataObjectArr** will create a data object array for data in controller page and redirected to action page.
 - The parameters passed will be account list array.
 - Will create the object array for result of wsdl from action to AccountData.php which is included in action.
-- From action, Function **createAccountListDataObject** will be redirected to AccountData.php will get the values from input array and sets the values for list data object. 
+- From action, Function **createAccountListDataObject** will be redirected to AccountData.php which will get the values from input array and sets the values for list data object. 
 - Result returns the account object data array to controller page.
 
 #### Step 4:
@@ -53,8 +53,8 @@ Function **viewAccount()** will be called first from index.php to controller pag
 
 - Function **createAccountSkillsListDataObjectArr** will create a list object array for the data from controller page and will be redirected to action page.
 - The parameters will be list array (data get from wsdl based on input) and skills get from wsdl.
-- Function **createAccountSkillsListDataObjectNew** will get the values from input array and sets the values for list data object which create account skills list data object in AccountData.php which is redirected from action page.
-- Result returns the account skills list input value object from  AccountData.php to action page.
+- From action page, Function **createAccountSkillsListDataObjectNew** will be redirected to AccountData.php which will get the values from input array and sets the values for list data object which create account skills list data object.
+- Result returns the account skills list input value object from   to action page.
 
 #### Step 7:
 
@@ -76,9 +76,10 @@ Function **viewAccount()** will be called first from index.php to controller pag
 
 - Function **createContactListDataObjectArr** will create the object array and will get the list data in controller page and will be redirected to action page.
 - The parameters will be the data getting from wsdl.
-- From action, it will pass the list array to function **createContactListDataObject** which is redirected to AccountData.php.
+- From action page, it will pass the list array to function **createContactListDataObject** which is redirected to AccountData.php.
 - parameters input list will be id, name, email, phone, mobile, query date, next offset, block, work phone.
-- Function **createContactListDataObject** in AccountData.php page will create a contact list data object and returns the contact list data object as result.
+- From action page, Function **createContactListDataObject** will be redirected to AccountData.php page which will create a contact list data object.
+- Returns the contact list data object as result.
 
 #### Step 10:
 
