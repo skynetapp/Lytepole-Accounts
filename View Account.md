@@ -9,16 +9,17 @@ Function **viewAccount()** will be called first from index.php to controller. wh
 
 - Function **createAccountListInputVO** will create the object array for input data to send parameters. The parameters are module,action and userid. This function will be called from controller to action.
 - Here in action, function takes the input data and prepares the input value object for WSDL from action to AccountData.php.
-- Here in AccountData.php, function **createAccountListInputVO** will get the values from input array and sets the values for list value object to pass for WSDL call. It creates the query and required input to create account.
+- 
+- Here in AccountData.php, function **createAccountListInputVO** which is included in action will get the values from input array and sets the values for list value object to pass for WSDL call. It creates the query and required input to create account.
 - Result returns the account list value object array to controller and will be passed to function **getAccount**.
  
 
 #### Step 2:
 
 - Function **getAccount** will get the list value object array in controller and will be passed to action.
-- The list array passed are session id, query and module name.
+- The parameters list array passed are session id, query and module name.
 - In action, function will call the wsdl call for getting the account details.
-- First, it will set the wsdl client by function **setWSDLHandle** from AccountWS.php.
+- First, it will set the wsdl client by function **setWSDLHandle** from AccountWS.php which is included in action.
 - Next, function **getListArray** will get the account details by ws call **get_entry_list_acc**.
 - Parameters passed for above function are session id, module name, query, orderby, offset, max result, deleted.
 - Result returns the account list array to controller.
@@ -27,14 +28,14 @@ Function **viewAccount()** will be called first from index.php to controller. wh
 
 - Function **createAccountListDataObjectArr** will create a data object array for data from controller to action.
 - The parameters passed will be account list array.
-- Will create the object array for result of wsdl from action to AccountData.php.
+- Will create the object array for result of wsdl from action to AccountData.php which is included in action.
 - Function **createAccountListDataObject** in AccountData.php will get the values from input array and sets the values for list data object. - Resultreturns the account object data array to controller.
 
 #### Step 4:
 
 - Function **createAccountSkillsListInputVO** will take the input data and prepares the input value object from controller to action.
 - The parameters passed will be account list array.
-- This function takes the input data and prepares the input value object for WSDL from action to AccountData.php.
+- This function takes the input data and prepares the input value object for WSDL from action to AccountData.php which is included in action.
 - In AccountData.php, function **createAccountSkillsListInputVO** will create the account skills list input value object.
 - Result returns the skills list data object array to controller.
 
@@ -50,15 +51,15 @@ Function **viewAccount()** will be called first from index.php to controller. wh
 #### Step 6:
 
 - Function **createAccountSkillsListDataObjectArr** will create a list object array for the data from controller to action.
-- The parameters will be list array (data get from wsdl based on input) and skills get from wsdl
-- Function **createAccountSkillsListDataObjectNew** will get the values from input array and sets the values for list data object which create account skills list data object from AccountData.php to action
+- The parameters will be list array (data get from wsdl based on input) and skills get from wsdl.
+- Function **createAccountSkillsListDataObjectNew** will get the values from input array and sets the values for list data object which create account skills list data object from AccountData.php to action.
 - Result returns the account skills list input value object from  AccountData.php to action.
 
 #### Step 7:
 
 - Function **createContactListInputVO** will create a contact list from controller to action.
 - In action, first we will get the user id by function **getUserID**.
-- Function **createContactListInputVO** will set the values from input array to create a contact list from action to AccountData.php.
+- Function **createContactListInputVO** which is included in action will set the values from input array to create a contact list from action to AccountData.php.
 - Parameters passed will be id, name, created by id, created by name, tags.
 - Result returns the contact list input value object to controller.
 
@@ -66,15 +67,15 @@ Function **viewAccount()** will be called first from index.php to controller. wh
 
 - Function **getContactsList** will get the blocked contacts list from controller to action.
 - The parameters passed will be session id, query, order_by, max_result.
-- In action, first ws connection client will be set using function **setWSDLHandle**.
-- Function **getBlockContactsArray** will send data to wsdl for getting the blocked contacts in AccountWS.php.
+- In action, first ws connection client will be set using function **setWSDLHandle** from AccountWS.php which is included in action.
+- Function **getBlockContactsArray** will send data to wsdl for getting the blocked contacts in AccountWS.php which is included in action.
 - will create the parameters for WSDL by ws call **get_entry_list_con** and return the contacts array as result.
 
 #### Step 9:
 
 - Function **createContactListDataObjectArr** will create the object array and will get the list data in controller to action.
 - The parameters will be the data getting from wsdl.
-- From action, it will pass the list array to **createContactListDataObject** in AccountData.php.
+- From action, it will pass the list array to **createContactListDataObject** in AccountData.php which is included in action.
 - parameters input list will be id, name, email, phone, mobile, query date, next offset, block, work phone.
 - Function **createContactListDataObject** will create a contact list data object and returns the contact list data object as result.
 
