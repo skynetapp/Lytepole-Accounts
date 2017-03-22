@@ -34,7 +34,7 @@ Function **viewAccount()** will be called first from index.php to controller pag
 
 #### Step 4:
 
-- Function **createAccountSkillsListInputVO** will take the input data and prepares the input value object from controller page to action page.
+- Function **createAccountSkillsListInputVO** will take the input data and prepares the input value object from controller page will be redirected to action page.
 - The parameters passed will be account list array.
 - This function takes the input data and prepares the input value object for WSDL from action page and redirected to AccountData.php page.
 - In AccountData.php page, function **createAccountSkillsListInputVO** will create the account skills list input value object.
