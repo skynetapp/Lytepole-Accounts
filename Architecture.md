@@ -15,7 +15,7 @@ Views | AccountFirsttimeLogin, AccountSkillsViewForm, AccountViewForm, AccountLo
 
 #### Architecture:
 
-This Accounts module used to show the user settings.
+This Accounts module is used to show the user settings.
 
 - After login into lytepole, when user clicks on settings link in left side bar it shows the user account details like image, name, company, skills, employee options, visa option etc.
 - Function **viewAccount** will be called when user details page is shown. Here we will get the account details of the user, skills and contact list which will be displayed in the form by calling function **showAccount**.
