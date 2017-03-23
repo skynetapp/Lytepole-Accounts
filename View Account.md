@@ -21,23 +21,13 @@
 - The action page returns the result get from account data page to controller page.
 - **Result** - session, query, module, order by, offset, max results, deleted.
 
-#### Step 3:getAccount
-
+#### Step 3: getAccount
 #### Step 3.1:
-
 - Function **getAccount** will be redirected to action page with parameters as session id, module name, query, orderby, offset, max result, deleted.
 - This function is used to call the wsdl for getting user account details.
-
 #### Step 3.2:
-
- - From account action page, it will be redirected to account ws page which sets the wsdl client connection by function **setWSDLHandle**.
-
-#### Step 3.2.1:
-
  - From account action page, function **getListArray** will be redirected to account ws page which get the account details by wsdl call **get_entry_list_acc** and returns the result to account action page.
- 
 #### Step 3.3
-
  - The account action page returns the result to controller page.
  - **Result** - session id, module name, query, order by, offset, max result, deleted. 
 
@@ -48,17 +38,9 @@
 
 - Function **createAccountListDataObjectArr** will be redirected to account action page which will create a data object array for data.
 - The parameters will be id, mobile, name, experience, location, email, createdby etc.
+- Using above input(Parameters) it sets the values for list data object.
 
 #### Step 4.2
-
-- From account action page it will redirect to account data page.
-
-#### Step 4.3
-
-- From account action page, Function **createAccountListDataObject** will be redirected to AccountData.php which will get the values from input array and sets the values for list data object. 
-- Result returns the account object data array to account action page.
-
-#### Step 4.4
 
 - The action page returns the result to controller page.
 - **Result** - AccountId, CreatedById, Account Name, Mobile, Account Email, start date, created by name, location, company, experience, referral perc, recruiter, image id, linkedin, github.
