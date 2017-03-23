@@ -9,11 +9,11 @@
 - **Parameters** : Module = Accounts, Action = viewAccount 
 
 
-#### Step 1:
+#### Step 1: getUserID
 
 - Function **getUserID** will get the user id from account action page.
 
-#### Step 2:
+#### Step 2: createAccountListInputVO
 
 #### Step 2.1:
 
@@ -32,7 +32,7 @@
 - The action page returns the result get from account data page to controller page.
 - **Result** - session, query, module, order by, offset, max results, deleted.
 
-#### Step 3:
+#### Step 3:getAccount
 
 #### Step 3.1:
 
@@ -53,7 +53,7 @@
  - **Result** - session id, module name, query, order by, offset, max result, deleted. 
 
 
-#### Step 4:
+#### Step 4: createAccountListDataObjectArr
 
 #### Step 4.1:
 
@@ -74,7 +74,7 @@
 - The action page returns the result to controller page.
 - **Result** - AccountId, CreatedById, Account Name, Mobile, Account Email, start date, created by name, location, company, experience, referral perc, recruiter, image id, linkedin, github.
 
-#### Step 5:
+#### Step 5: createAccountSkillsListInputVO
 
 #### Step 5.1:
 
@@ -96,7 +96,7 @@
 - **Result** - login Session id, Image id, Account id.
 
 
-#### Step 6:
+#### Step 6: getSkills
 
 #### Step 6.1:
 
@@ -113,7 +113,7 @@
 - The account action page will get the list array and return result to controller page.
 - **Result** - session id, module name, module id.
 
-#### Step 7:
+#### Step 7: createAccountSkillsListDataObjectArr
 
 #### Step 7.1
 
@@ -130,7 +130,7 @@
 - The action page returns the result to controller page.
 - **Result** - account id, image id, id, created by id, created by name, tag name, tag type, tag value.
 
-#### Step 8:
+#### Step 8: createContactListInputVO
 
 #### Step 8.1
 
@@ -151,7 +151,7 @@
 - The action page returns the result to controller page.
 - **Result** - session, query, user id, query date, order by, select fields, max results, deleted.
 
-#### Step 9:
+#### Step 9: getContactsList
 
 #### Step 9.1
 
@@ -172,9 +172,10 @@
 - The action page returns the result to controller page.
 - **Result** - session, module name, query, order by, offset, max results, deleted.
 
-#### Step 10:
+#### Step 10: createContactListDataObjectArr
 
 #### Step 10.1:
+
 - Function **createContactListDataObjectArr** will be redirected to action page which will create the object array and will get the list data.
 - The parameters will be id, name, email, phone, mobile, query date, next offset, block, work phone.
 
@@ -188,7 +189,7 @@
 - The account action page returns the result to controller page.
 - **Result** - id, name, mobile, work phone, mobile phone, email, block.
 
-#### Step 11:
+#### Step 11: showAccount
 
 #### Step 11.1
 
