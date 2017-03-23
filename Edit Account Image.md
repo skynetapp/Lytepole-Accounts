@@ -2,11 +2,14 @@
 
 #### Description: This document explains the code flow of editing account image.
 
-#### Step 1:
+#### Function: editAccountImage
 
-Function **editAccountImage** will be called in index.php to controller page which will update the account image of login user and uploads to sugar folder using curl.
+Function **editAccountImage** will update the account image of login user and uploads to sugar folder using curl.
 
-- Function **getUserID** will get the login user id from controller page and will be redirected to action page. 
+#### Step 1: getUserID
+
+- Function **getUserID** will get the user id from account action page.
+ 
 - In action page, first wsdl client connection will be set and will get the login session which will be redirected to AccountWS.php by ws call **get_user_id**.
 - The result will be returned from action page to controller page.
 
