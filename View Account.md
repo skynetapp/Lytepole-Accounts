@@ -14,21 +14,10 @@
 - Function **getUserID** will get the user id from account action page.
 
 #### Step 2: createAccountListInputVO
-
 #### Step 2.1:
-
 - Function **createAccountListInputVO** will redirect to account action page with posted parameters and user id.
-
-#### Step 2.2:
-
-- From account action page, function **createAccountListInputVO** will redirect to account data page.
-
-#### Step 2.3
-
-- In account data page, which gets the values from input array and sets the values for list value object to pass for WSDL call. It creates the query and required input to get account details and returns the result back to action page.
-
-#### Step 2.4
-
+- which gets the values from input array and sets the values for list value object to pass for WSDL call. It creates the query and required input to get account details and returns the result back to action page.
+#### Step 2.2
 - The action page returns the result get from account data page to controller page.
 - **Result** - session, query, module, order by, offset, max results, deleted.
 
