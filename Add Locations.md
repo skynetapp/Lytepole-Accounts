@@ -2,51 +2,96 @@
 
 #### Description: This document explains the code flow of Adding locations.
 
-#### Step 1:
-
-Function **addLocations** will be called first in index.php to controller page.
+#### Function: addLocations
 
 - This function is used to add new location or edit the existing location.
-- The parameters passed will be Module Name = Accounts, Action Name =Edit and location.
-- From controller, Function **getUserID** will be redirected to action page which gets the login user id. 
-- In action page, first wsdl client connection will be set and will get the login session from AccountWS.php by ws call **get_user_id**.
-- The result will be returned from action to controller page.
+- **Parameters** - Module Name = Accounts, Action Name =Edit and location.
 
-#### Step 2:
+#### Step 1: getUserID
 
-- Function **createAccountListInputVO** will create the object array for input data to send parameters. 
-- The parameters are module, action and userid. This function will be redirected from controller to action page.
-- Here in action page, function takes the input data and prepares the input value object for WSDL from action page to AccountData.php page.
-- Here function **createAccountListInputVO** from action page will be redirected to AccountData.php page which gets the values from input array and sets the values for list value object to pass for WSDL call. It creates the query and required input to create account.
-- Result returns the account list value object array to controller page and will be passed to function **getAccount**.
+- Function **getUserID** will get the user id from account action page.
+- In action page, wsdl client connection will be set and will get the login session from AccountWS.php by ws call **get_user_id**.
+- The result will be returned from account action page to controller page.
 
-#### Step 3:
+#### Step 2: createAccountListInputVO
 
-- Function **getAccount** will get the list value object array in controller page and will be redirected to action page.
-- The parameters list array passed are session id, query and module name.
-- In action page, function will call the wsdl call for getting the account details.
-- First, it will set the wsdl client by function **setWSDLHandle** from AccountWS.php page which is included in action page.
-- Next, function **getListArray** will get the account details by ws call **get_entry_list_acc**.
-- Parameters passed for above function are session id, module name, query, orderby, offset, max result, deleted.
-- Result returns the account list array to controller page.
+#### Step 2.1:
+
+- Function **createAccountListInputVO** will redirect to account action page with posted parameters and user id.
+
+#### Step 2.2:
+
+- From account action page, function **createAccountListInputVO** will redirect to account data page.
+
+#### Step 2.3
+
+- In account data page, which gets the values from input array and sets the values for list value object to pass for WSDL call. It creates the query and required input to get account details and returns the result back to action page.
+
+#### Step 2.4
+
+- The action page returns the result get from account data page to controller page.
+- **Result** - session, query, module, order by, offset, max results, deleted.
+
+
+#### Step 3:getAccount
+
+#### Step 3.1:
+
+- Function **getAccount** will be redirected to action page with parameters as session id, module name, query, orderby, offset, max result, deleted.
+- This function is used to call the wsdl for getting user account details.
+
+#### Step 3.2:
+
+ - From account action page, it will be redirected to account ws page which sets the wsdl client connection by function **setWSDLHandle**.
+
+#### Step 3.2.1:
+
+ - From account action page, function **getListArray** will be redirected to account ws page which get the account details by wsdl call **get_entry_list_acc** and returns the result to account action page.
+ 
+#### Step 3.3
+
+ - The account action page returns the result to controller page.
+ - **Result** - session id, module name, query, order by, offset, max result, deleted. 
 
 
 #### Step 4:
 
-- Function **saveAccountSkills** will call the wsdl to save location form controller page and will be redirected to action page.
-- The parameters passed will be name, location, experience, email, account id.
-- In action page, first ws client connection will be set by calling function **setWSDLHandle** which will be redirected to AccountWS.php.
-- From action page, Function **saveAccountSkills** will be redirected to AccountWS.php which is included in action page will send data to wsdl for saving account skills.
-- Create the parameters and pass the parameters to ws call **set_entry** and return the result as sugar record id to controller page.
-- Here based on tag type, parameters will be passed to wsdl call. If **type = Employment type**, then parameters will be name, tag type and value else parameters will be only name and tag type. 
+#### Step 4.1
 
-#### Step 5:
+- Function **saveAccountSkills** will be redirected to action page which will call the wsdl to save location form.
+- The parameters passed will be name, location, experience, email, account id.
+
+#### Step 4.2
+
+- In action page, first ws client connection will be set by calling function **setWSDLHandle** which will be redirected to AccountWS.php.
+
+#### Step 4.2.1
+
+- From action page, Function **saveAccountSkills** will be redirected to AccountWS.php which is included in action page will send data to wsdl for saving account skills.
+- Create the parameters and pass the parameters to ws call **set_entry** and return the result as sugar record id to account action page.
+- Here based on tag type, parameters will be passed to wsdl call. If **type = Employment type**, then result will be name, tag type and value else result will be only name and tag type. 
+
+#### Step 5: saveAccountSkillsRelation
+
+#### Step 5.1
 
 - Function **saveAccountSkillsRelation** will set the relation to account and saved skills.
-- The parameters will be skills ids, post_data = Account id, Module name = Accounts.
+- The parameters will be skills ids, Account id, Module name = Accounts.
+
+#### Step 5.2
+
 - In action page, first wsdl client connection will be set by calling function **setWSDLHandle** from AccountWS.php which is included in action.
+
+#### step 5.2.1
+
 - From action page, Function **saveAccountSkillsRelation** will be redirected to AccountWS.php  which sends data to wsdl to set data and skills relation.
-- create the parameters for wsdl using object and set the relationship using wsdl call **set_relationship** and returns the sugar relation id as result to controller page.
+- create the parameters for wsdl using object and set the relationship using wsdl call **set_relationship** and returns the  result to account action page.
+
+#### Step 5.3
+
+- The account action page returns the result to controller page.
+- **Result** - Sugar relation record id.
+
 
 #### Step 6:
 
