@@ -21,7 +21,7 @@
 
 #### Step 2.2:
 
-- From account action page it will redirect to account data page.
+- From account action page, function **createAccountListInputVO** will redirect to account data page.
 
 #### Step 2.3
 
@@ -49,7 +49,8 @@
  
 #### Step 3.3
 
- - The account action page returns the result get from account data page to controller page.
+ - The account action page returns the result to controller page.
+ - **Result** - session id, module name, query, order by, offset, max result, deleted. 
 
 
 #### Step 4:
@@ -70,8 +71,8 @@
 
 #### Step 4.4
 
-- The action page returns the result get from account data page to controller page.
-- Result - AccountId, CreatedById, Account Name, Mobile, Account Email, start date, created by name, location, company, experience, referral perc, recruiter, image id, linkedin, github.
+- The action page returns the result to controller page.
+- **Result** - AccountId, CreatedById, Account Name, Mobile, Account Email, start date, created by name, location, company, experience, referral perc, recruiter, image id, linkedin, github.
 
 #### Step 5:
 
@@ -82,7 +83,7 @@
 
 #### Step 5.2:
 
-- From accountaction page it will be redirected to AccountData.php page.
+- From account action page, function **createAccountSkillsListInputVO** will be redirected to AccountData.php page.
 
 #### Step 5.3:
 
@@ -92,7 +93,7 @@
 #### Step 5.4:
 
 - The action page returns the result get from account data page to controller page.
-- Result - login Session id, Image id, Account id.
+- **Result** - login Session id, Image id, Account id.
 
 
 #### Step 6:
@@ -100,7 +101,7 @@
 #### Step 6.1:
 
 - Function **getSkills** will be redirected to action page which will get the account skills .
-- The parameters passed are skills list data object array.
+- The parameters passed are session id, account id.
 
 #### Step 6.2
 
@@ -110,7 +111,7 @@
 
 - From account action page, Function **getSkills** will be redirected to account ws page which will send data to wsdl for getting account skills by wsdl call **get_entry_list_tags** and will return the result back to account action page.
 - The account action page will get the list array and return result to controller page.
-- Result - session id, module name, module id.
+- **Result** - session id, module name, module id.
 
 #### Step 7:
 
@@ -126,8 +127,8 @@
 
 #### Step 7.3
 
-- The action page returns the result get from account data page to controller page.
-- Result - account id, image id, id, created by id, created by name, tag name, tag type, tag value.
+- The action page returns the result to controller page.
+- **Result** - account id, image id, id, created by id, created by name, tag name, tag type, tag value.
 
 #### Step 8:
 
@@ -147,8 +148,8 @@
 
 #### Step 8.3
 
-- The action page returns the result get from account data page to controller page.
-- (Result - session, query, user id, query date, order by, select fields, max results, deleted).
+- The action page returns the result to controller page.
+- **Result** - session, query, user id, query date, order by, select fields, max results, deleted.
 
 #### Step 9:
 
@@ -168,8 +169,8 @@
 
 #### Step 9.4
 
-- The action page returns the result get from account ws page to controller page.
-- Result - session, module name, query, order by, offset, max results, deleted.
+- The action page returns the result to controller page.
+- **Result** - session, module name, query, order by, offset, max results, deleted.
 
 #### Step 10:
 
@@ -179,13 +180,13 @@
 
 #### Step 10.2
 
-- From action page, Function **createContactListDataObject** will be redirected to AccountData.php page which will create a contact list data object.
+- From account action page, Function **createContactListDataObject** will be redirected to AccountData.php page which will create a contact list data object.
 - Returns the contact list data object as result to account action page.
 
 #### Step 10.3
 
-- The action page returns the result get from account data page to controller page.
-- Result - id, name, mobile, work phone, mobile phone, email, block.
+- The account action page returns the result to controller page.
+- **Result** - id, name, mobile, work phone, mobile phone, email, block.
 
 #### Step 11:
 
