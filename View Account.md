@@ -57,7 +57,7 @@
 #### Step 4.1:
 
 - Function **createAccountListDataObjectArr** will be redirected to account action page which will create a data object array for data.
-- The parameters will be account list array i.e the data which will get from wsdl based on the input.
+- The parameters will be id, mobile, name, experience, location, email, createdby etc.
 
 #### Step 4.2
 
